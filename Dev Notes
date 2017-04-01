@@ -1,0 +1,34 @@
+
+This project will be written for broadband monitoring and alerting on issues.
+
+Notes:
+1. Program will be written in C++ and be forked to a Python program that can be run on other systems.
+	It would be nice to not have to depend solely on the Windows Networking stack. 
+	(Maybe not needed depends on how UAC in windows will react to this.)
+
+2. We want to run this with the lowest permission set we can. Rework in architecture is likely to get this working in this way. (It is understood that somethings will need higher permissions)
+
+3. Testing methods used will include ICMP/PING and SNMP to start. 
+	We will branch this out but will start with these two.
+
+4. Web UI / Program UI: 
+	I would like the program to be able to locally serve a dynamic webpage that can show results of testing and allow for history review. 
+	The program will be the only interface to admin settings and editing monitored sites. This provides the ability for the program to run on a "server" and the webUI to be served to others for view.
+		Program UI: QT?? https://www.qt.io/licensing/ (Need to further review Legal and use)
+		Web UI: PHP/ XML? page served from a web server.
+
+5. Alerting / Notifications:
+	Email and PHP growl notification?  Should be able to have it send an email from a linked server or account. 
+	PHP Growl or like service should be able to provide alerting/notification for the WebUI.
+	Also need to find a way to put this in the Program itself for review.
+	Not sure if I would be able to sync server and Web UI.
+
+. Clean up at program end will be preformed!!
+	Clearing any memory allocated to the program as well as any logging or historical data not specified as keep. Critical errors will always be kept likely in a txt file. The UI will close and clean in the background after displaying a cleaner prompt/notification. Once done it will fully close. 
+
+. Final Build 
+	Will include source code in text format and compiled program with any needed library's.
+	A Doc will be distributed with the program explaining whats under the hood so to speak and how to tweak it to fit ones needs.
+	This also provides easy review of software code as well as update building and forking for another purpose.
+
+.
